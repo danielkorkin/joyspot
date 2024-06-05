@@ -8,6 +8,7 @@ import {
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { ThemeProvider } from "next-themes";
 
 export default async function LocaleLayout({
 	children,
@@ -20,17 +21,19 @@ export default async function LocaleLayout({
 
 	return (
 		<ClerkProvider>
-			<html lang={locale}>
+			<html suppressHydrationWarning lang={locale}>
 				<body>
-					<NextIntlClientProvider messages={messages}>
-						<SignedOut>
-							<SignInButton />
-						</SignedOut>
-						<SignedIn>
-							<UserButton />
-						</SignedIn>
-						{children}
-					</NextIntlClientProvider>
+					<ThemeProvider>
+						<NextIntlClientProvider messages={messages}>
+							<SignedOut>
+								<SignInButton />
+							</SignedOut>
+							<SignedIn>
+								<UserButton />
+							</SignedIn>
+							{children}
+						</NextIntlClientProvider>
+					</ThemeProvider>
 				</body>
 			</html>
 		</ClerkProvider>
