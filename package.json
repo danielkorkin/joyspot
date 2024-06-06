@@ -9,7 +9,6 @@
 		"lint": "next lint",
 		"postinstall": "prisma generate"
 	},
-	
 	"dependencies": {
 		"@clerk/nextjs": "^5.1.4",
 		"@prisma/client": "^5.15.0",
