@@ -12,9 +12,20 @@
 		"opensourceAnswer": "Yes. It is open source and available on ",
 		"freeQuestion": "Is Joyspot free?",
 		"freeAnswer": "Yes. It is and will forever be free to use.",
-		"signupNow": "Sign Up Now"
+		"joinNow": "Join Now"
 	},
 	"Navbar": {
 		"home": "Home"
+	},
+	"Posts": {
+		"title": "Posts"
+	},
+	"PostForm": {
+		"placeholderTitle": "Title",
+		"placeholderContent": "Content",
+		"submit": "Create Post"
+	},
+	"PostCard": {
+		"author": "Author"
 	}
 }

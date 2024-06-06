@@ -2,12 +2,14 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 export default function PostForm({
 	onSubmit,
 }: {
 	onSubmit: (title: string, content: string) => void;
 }) {
+	t = useTranslations("PostForm");
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
@@ -22,19 +24,19 @@ export default function PostForm({
 		<form onSubmit={handleSubmit} className="space-y-4">
 			<Input
 				type="text"
-				placeholder="Title"
+				placeholder={t("placeholderTitle")}
 				value={title}
 				onChange={(e) => setTitle(e.target.value)}
 				required
 			/>
 			<Input
 				type="text"
-				placeholder="Content"
+				placeholder={t("placeholderContent")}
 				value={content}
 				onChange={(e) => setContent(e.target.value)}
 				required
 			/>
-			<Button type="submit">Create Post</Button>
+			<Button type="submit">{t("submit")}</Button>
 		</form>
 	);
 }

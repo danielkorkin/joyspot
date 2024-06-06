@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import CreatePostDialog from "@/components/CreatePostDialog";
 import PostCard from "@/components/PostCard";
+import { useTranslations } from "next-intl";
 
 type Post = {
 	id: string;
@@ -14,6 +15,7 @@ type Post = {
 };
 
 export default function PostsPage() {
+	const t = useTranslations("Posts");
 	const [posts, setPosts] = useState<Post[]>([]);
 
 	const fetchPosts = async () => {
@@ -32,7 +34,7 @@ export default function PostsPage() {
 
 	return (
 		<div>
-			<h1>Posts</h1>
+			<h1>{t("title")}</h1>
 			<CreatePostDialog onPostCreated={fetchPosts} />
 			<div className="mt-4">
 				{posts.map((post) => (

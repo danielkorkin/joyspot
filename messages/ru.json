@@ -12,9 +12,20 @@
 		"opensourceAnswer": "Да. Он имеет открытый исходный код и доступен на ",
 		"freeQuestion": "Joyspot бесплатен?",
 		"freeAnswer": "Да. Это есть и всегда будет бесплатным для использования.",
-        "signupNow": "Sign Up Now"
+		"joinNow": "Join Now"
 	},
 	"Navbar": {
 		"home": "Home"
-	}
+	},
+	"Posts": {
+		"title": "Posts"
+	},
+	"PostForm": {
+		"placeholderTitle": "Title",
+		"placeholderContent": "Content",
+		"submit": "Create Post"
+	},
+	"PostCard": {
+		"author": "Author"
+	}	
 }

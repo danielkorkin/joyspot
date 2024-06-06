@@ -5,6 +5,7 @@ import {
 	CardDescription,
 	CardContent,
 } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 type Post = {
 	id: string;
@@ -20,11 +21,13 @@ interface PostCardProps {
 }
 
 export default function PostCard({ post }: PostCardProps) {
+	const t = useTranslations("PostCard");
+
 	return (
 		<Card className="mx-20 my-20">
 			<CardHeader>
 				<CardTitle>{post.title}</CardTitle>
-				<CardDescription>Author: {post.author.name}</CardDescription>
+				<CardDescription>{t("author")}: {post.author.name}</CardDescription>
 			</CardHeader>
 			<CardContent>
 				<p>{post.content}</p>
