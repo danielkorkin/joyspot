@@ -1,25 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { verifySignature } from "@svix/webhooks";
-import { Svix } from "svix";
+import { Webhook } from "svix";
 
-// Verify signature using your Svix secret
-const svixWebhookSecret = process.env.SVIX_WEBHOOK_SECRET as string;
-
-const webhook = new Svix(svixWebhookSecret);
+const webhookSecret = process.env.WEBHOOK_SECRET as string;
 
 export async function POST(request: NextRequest) {
+	const svixHeaders = {
+		"svix-id": request.headers.get("svix-id") ?? "",
+		"svix-timestamp": request.headers.get("svix-timestamp") ?? "",
+		"svix-signature": request.headers.get("svix-signature") ?? "",
+	};
+
 	const payload = await request.text();
-	const headers = request.headers;
+
+	const webhook = new Webhook(webhookSecret);
+	let event;
 
 	try {
-		// Verify the webhook signature
-		const event = webhook.verify(payload, headers);
+		event = webhook.verify(payload, svixHeaders);
+	} catch (error) {
+		return NextResponse.json(
+			{ message: "Invalid request" },
+			{ status: 400 }
+		);
+	}
 
-		if (event.type === "user.created") {
-			const user = event.data;
+	if (event.type === "user.created") {
+		const user = event.data;
 
-			// Create the user in the database
+		try {
 			await db.user.create({
 				data: {
 					id: user.id,
@@ -27,21 +36,17 @@ export async function POST(request: NextRequest) {
 					name: `${user.first_name} ${user.last_name}`,
 				},
 			});
-
 			return NextResponse.json(
 				{ message: "User created successfully" },
 				{ status: 201 }
 			);
-		} else {
+		} catch (error) {
 			return NextResponse.json(
-				{ message: "Event not handled" },
-				{ status: 400 }
+				{ message: "Error creating user" },
+				{ status: 500 }
 			);
 		}
-	} catch (error) {
-		return NextResponse.json(
-			{ message: "Invalid request" },
-			{ status: 400 }
-		);
 	}
+
+	return NextResponse.json({ message: "Event not handled" }, { status: 400 });
 }
