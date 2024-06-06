@@ -9,6 +9,7 @@ export type UserData = {
 	email_addresses: { email_address: string }[];
 	first_name: string;
 	last_name: string;
+	username: string;
 };
 
 export type Post = {
