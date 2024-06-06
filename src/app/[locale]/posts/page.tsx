@@ -24,7 +24,7 @@ const PostsPage = async () => {
 			title: post.title,
 			content: post.content,
 			author: {
-				name: `${user.firstName} ${user.lastName}`,
+				name: `${user.username}`,
 			},
 		});
 	}

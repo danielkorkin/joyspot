@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 				data: {
 					id: user.id,
 					email: user.email_addresses[0].email_address,
-					name: `${user.first_name} ${user.last_name}`,
+					name: `${user.username}`,
 				},
 			});
 			return NextResponse.json(
