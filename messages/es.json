@@ -1,5 +1,36 @@
 {
-	"Index": {
-		"title": "¡Hola Mundo!"
+	"Home": {
+		"title": "Joyspot",
+		"slogan": "Medios de comunicación social - Sin la toxicidad",
+		"reasonStart": "Joyspot es menos ",
+		"reasonEnd": " que otras plataformas de redes sociales.",
+		"reasonOne": "toxic",
+		"reasonTwo": "malsano",
+		"reasonThree": "addictivo",
+		"reasonFour": "secretivo",
+		"opensourceQuestion": "¿Es Joyspot de código abierto?",
+		"opensourceAnswer": "Sí. Es de código abierto y disponible en ",
+		"freeQuestion": "¿Joyspot es gratis?",
+		"freeAnswer": "Sí. Es y será siempre libre de usar.",
+		"joinNow": "Join Now"
+	},
+	"Navbar": {
+		"home": "Home"
+	},
+	"Posts": {
+		"title": "Posts"
+	},
+	"PostForm": {
+		"placeholderTitle": "Title",
+		"placeholderContent": "Content",
+		"submit": "Create Post"
+	},
+	"PostCard": {
+		"author": "Author"
+	},
+	"CreatePostDialog": {
+		"title": "Create a New Post",
+		"newPost": "New Post",
+		"cancel": "Cancel"
 	}
 }

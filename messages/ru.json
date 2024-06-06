@@ -1,0 +1,36 @@
+{
+	"Home": {
+		"title": "Joyspot",
+		"slogan": "Социальные сети - без токсичности",
+		"reasonStart": "Joyspot менее ",
+		"reasonEnd": " чем другие социальные сети.",
+		"reasonOne": "токсичен",
+		"reasonTwo": "вреден",
+		"reasonThree": "зависимый",
+		"reasonFour": "скрытен",
+		"opensourceQuestion": "Является ли Joyspot открытым исходным кодом?",
+		"opensourceAnswer": "Да. Он имеет открытый исходный код и доступен на ",
+		"freeQuestion": "Joyspot бесплатен?",
+		"freeAnswer": "Да. Это есть и всегда будет бесплатным для использования.",
+		"joinNow": "Join Now"
+	},
+	"Navbar": {
+		"home": "Home"
+	},
+	"Posts": {
+		"title": "Posts"
+	},
+	"PostForm": {
+		"placeholderTitle": "Title",
+		"placeholderContent": "Content",
+		"submit": "Create Post"
+	},
+	"PostCard": {
+		"author": "Author"
+	},
+	"CreatePostDialog": {
+		"title": "Create a New Post",
+		"newPost": "New Post",
+		"cancel": "Cancel"
+	}
+}
