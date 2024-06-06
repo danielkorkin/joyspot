@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CreatePostDialog from "@/components/CreatePostDialog";
+import PostCard from "@/components/PostCard";
 
 type Post = {
 	id: string;
@@ -35,13 +36,7 @@ export default function PostsPage() {
 			<CreatePostDialog onPostCreated={fetchPosts} />
 			<div className="mt-4">
 				{posts.map((post) => (
-					<div key={post.id} className="border p-4 mb-4">
-						<h2 className="text-xl font-bold">{post.title}</h2>
-						<p>{post.content}</p>
-						<p className="text-sm text-gray-600">
-							Author: {post.author.name}
-						</p>
-					</div>
+					<PostCard key={post.id} post={post} />
 				))}
 			</div>
 		</div>

@@ -10,3 +10,12 @@ export type UserData = {
 	first_name: string;
 	last_name: string;
 };
+
+export type Post = {
+	id: string;
+	title: string;
+	content: string;
+	author: {
+		name: string;
+	};
+};
