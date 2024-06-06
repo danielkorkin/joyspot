@@ -11,9 +11,10 @@
 		"opensourceQuestion": "¿Es Joyspot de código abierto?",
 		"opensourceAnswer": "Sí. Es de código abierto y disponible en ",
 		"freeQuestion": "¿Joyspot es gratis?",
-		"freeAnswer": "Sí. Es y será siempre libre de usar."
+		"freeAnswer": "Sí. Es y será siempre libre de usar.",
+		"signupNow": "Sign Up Now"
 	},
 	"Navbar": {
-		"products": "Productos"
+		"home": "Home"
 	}
 }
