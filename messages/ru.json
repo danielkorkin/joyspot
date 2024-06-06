@@ -11,9 +11,10 @@
 		"opensourceQuestion": "Является ли Joyspot открытым исходным кодом?",
 		"opensourceAnswer": "Да. Он имеет открытый исходный код и доступен на ",
 		"freeQuestion": "Joyspot бесплатен?",
-		"freeAnswer": "Да. Это есть и всегда будет бесплатным для использования."
+		"freeAnswer": "Да. Это есть и всегда будет бесплатным для использования.",
+		"signupNow": "Sign Up Now"
 	},
 	"Navbar": {
-		"products": "Продукты"
+		"home": "Home"
 	}
 }
