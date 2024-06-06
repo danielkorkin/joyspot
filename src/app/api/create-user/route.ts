@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "../../../lib/db";
 import { Webhook } from "svix";
-import { WebhookEvent } from "../../../../lib/types";
+import { WebhookEvent } from "@/src/lib/types";
 
 const webhookSecret = process.env.WEBHOOK_SECRET as string;
 

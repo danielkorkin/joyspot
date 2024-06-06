@@ -1,10 +1,6 @@
-import {
-	clerkMiddleware,
-	createRouteMatcher,
-	redirectToSignIn,
-} from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import createMiddleware from "next-intl/middleware";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { locales } from "./lib/locales";
 
 const intlMiddleware = createMiddleware({
@@ -18,7 +14,7 @@ export default clerkMiddleware((auth, req) => {
 	if (isProtectedRoute(req)) auth().protect();
 
 	// Skip localization for API routes
-	if (req.nextUrl.pathname.startsWith("/api")) {
+	if (req.nextUrl.pathname.includes("/api")) {
 		return NextResponse.next();
 	}
 

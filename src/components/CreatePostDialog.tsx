@@ -1,46 +1,25 @@
+"use client";
+
 import { useState } from "react";
-import { currentUser } from "@clerk/nextjs/server";
 import {
 	Dialog,
 	DialogTrigger,
 	DialogContent,
 	DialogHeader,
 	DialogTitle,
-	DialogDescription,
 	DialogFooter,
 	DialogClose,
 } from "@/src/components/ui/dialog";
 import PostForm from "@/src/components/PostForm";
 import { Button } from "@/src/components/ui/button";
+import handleSubmit from "./actions/createPost";
+import { useAuth } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
-export default function CreatePostDialog({
-	onPostCreated,
-}: {
-	onPostCreated: () => void;
-}) {
+const CreatePostDialog = () => {
 	const [open, setOpen] = useState(false);
-
-	const handleSubmit = async (title: string, content: string) => {
-		const user = await currentUser();
-		if (!user) {
-			console.error("User not authenticated");
-			return;
-		}
-
-		try {
-			const post = await db.post.create({
-				data: {
-					title,
-					content,
-					authorId: user.id,
-				},
-			});
-			onPostCreated();
-			setOpen(false);
-		} catch (error) {
-			console.error("Failed to create post");
-		}
-	};
+	const { userId } = useAuth();
+	const router = useRouter();
 
 	return (
 		<Dialog open={open} onOpenChange={setOpen}>
@@ -51,7 +30,13 @@ export default function CreatePostDialog({
 				<DialogHeader>
 					<DialogTitle>Create a New Post</DialogTitle>
 				</DialogHeader>
-				<PostForm onSubmit={handleSubmit} />
+				<PostForm
+					onSubmit={(title, content) => {
+						handleSubmit(title, content, userId);
+						setOpen(false);
+						router.refresh();
+					}}
+				/>
 				<DialogFooter>
 					<DialogClose asChild>
 						<Button variant="ghost">Cancel</Button>
@@ -60,4 +45,6 @@ export default function CreatePostDialog({
 			</DialogContent>
 		</Dialog>
 	);
-}
+};
+
+export default CreatePostDialog;
