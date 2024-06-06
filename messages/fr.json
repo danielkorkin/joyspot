@@ -12,25 +12,25 @@
 		"opensourceAnswer": "Oui. Il est open-source et disponible sur ",
 		"freeQuestion": "Joyspot est-il gratuit ?",
 		"freeAnswer": "Oui. Son utilisation est et sera toujours gratuite.",
-		"joinNow": "Join Now"
+		"joinNow": "Adhérer maintenant"
 	},
 	"Navbar": {
-		"home": "Home"
+		"home": "Maison"
 	},
 	"Posts": {
-		"title": "Posts"
+		"title": "Postes"
 	},
 	"PostForm": {
-		"placeholderTitle": "Title",
-		"placeholderContent": "Content",
-		"submit": "Create Post"
+		"placeholderTitle": "Titre",
+		"placeholderContent": "Contenu",
+		"submit": "Créer un message"
 	},
 	"PostCard": {
-		"author": "Author"
+		"author": "Auteur"
 	},
 	"CreatePostDialog": {
-		"title": "Create a New Post",
-		"newPost": "New Post",
-		"cancel": "Cancel"
+		"title": "Créer un nouveau message",
+		"newPost": "Nouveau message",
+		"cancel": "Annuler"
 	}
 }
