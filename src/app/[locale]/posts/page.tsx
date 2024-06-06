@@ -1,9 +1,6 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import CreatePostDialog from "@/src/components/CreatePostDialog";
-import PostCard from "@/src/components/PostCard";
-import { useTranslations } from "next-intl";
+import { db } from "@/src/lib/db";
+import { PostsLayout } from "./PostsLayout";
+import { clerkClient } from "@clerk/nextjs/server";
 
 type Post = {
 	id: string;
@@ -14,33 +11,25 @@ type Post = {
 	};
 };
 
-export default function PostsPage() {
-	const t = useTranslations("Posts");
-	const [posts, setPosts] = useState<Post[]>([]);
+export const revalidate = 60;
 
-	const fetchPosts = async () => {
-		const response = await fetch("/api/posts/getall", { revalidate: 60 });
-		if (response.ok) {
-			const data = await response.json();
-			setPosts(data);
-		} else {
-			console.error("Failed to fetch posts");
-		}
-	};
+const PostsPage = async () => {
+	const posts: Post[] = [];
+	const response = await db.post.findMany();
 
-	useEffect(() => {
-		fetchPosts();
-	}, []);
+	for (const post of response) {
+		const user = await clerkClient.users.getUser(post.authorId);
+		posts.push({
+			id: post.id,
+			title: post.title,
+			content: post.content,
+			author: {
+				name: `${user.firstName} ${user.lastName}`,
+			},
+		});
+	}
 
-	return (
-		<div>
-			<h1>{t("title")}</h1>
-			<CreatePostDialog onPostCreated={fetchPosts} />
-			<div className="mt-4">
-				{posts.map((post) => (
-					<PostCard key={post.id} post={post} />
-				))}
-			</div>
-		</div>
-	);
-}
+	return <PostsLayout posts={posts} />;
+};
+
+export default PostsPage;
