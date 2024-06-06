@@ -5,11 +5,15 @@ import { MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
+import { LanguagePicker } from "@/components/language-switcher";
+import { UserButton } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 
 type Props = {};
 
-const Navbar = (props: Props) => {
+const Navbar = async (props: Props) => {
 	const t = useTranslations("Navbar");
+	const user = await currentUser();
 
 	return (
 		<header className="fixed right-0 left-0 top-0 py-4 px-4 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
@@ -20,12 +24,14 @@ const Navbar = (props: Props) => {
 							className={buttonVariants({ variant: "outline" })}
 							href="/"
 						>
-							{t("products")}
+							{t("home")}
 						</Link>
 					</li>
 				</ul>
 			</nav>
 			<ModeToggle />
+			<LanguagePicker />
+			{user ? <UserButton afterSignOutUrl="/" /> : null}
 		</header>
 	);
 };

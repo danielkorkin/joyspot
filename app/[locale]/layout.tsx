@@ -30,12 +30,6 @@ export default async function LocaleLayout({
 						disableTransitionOnChange
 					>
 						<NextIntlClientProvider messages={messages}>
-							<SignedOut>
-								<SignInButton />
-							</SignedOut>
-							<SignedIn>
-								<UserButton />
-							</SignedIn>
 							{children}
 						</NextIntlClientProvider>
 					</ThemeProvider>
