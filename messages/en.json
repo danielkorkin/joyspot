@@ -11,9 +11,10 @@
 		"opensourceQuestion": "Is Joyspot open source?",
 		"opensourceAnswer": "Yes. It is open source and available on ",
 		"freeQuestion": "Is Joyspot free?",
-		"freeAnswer": "Yes. It is and will forever be free to use."
+		"freeAnswer": "Yes. It is and will forever be free to use.",
+		"signupNow": "Sign Up Now"
 	},
 	"Navbar": {
-		"products": "Products"
+		"home": "Home"
 	}
 }

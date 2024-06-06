@@ -4,11 +4,11 @@ import {
 	redirectToSignIn,
 } from "@clerk/nextjs/server";
 import createMiddleware from "next-intl/middleware";
+import { locales } from "./lib/locales";
 
 const intlMiddleware = createMiddleware({
 	// A list of all locales that are supported
-	locales: ["en", "es", "fr", "ru"],
-
+	locales: locales,
 	// Used when no locale matches
 	defaultLocale: "en",
 });

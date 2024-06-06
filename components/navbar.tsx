@@ -5,6 +5,8 @@ import { MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
+import { LanguagePicker } from "@/components/language-switcher";
+
 
 type Props = {};
 
@@ -20,12 +22,13 @@ const Navbar = (props: Props) => {
 							className={buttonVariants({ variant: "outline" })}
 							href="/"
 						>
-							{t("products")}
+							{t("home")}
 						</Link>
 					</li>
 				</ul>
 			</nav>
 			<ModeToggle />
+			<LanguagePicker />
 		</header>
 	);
 };
