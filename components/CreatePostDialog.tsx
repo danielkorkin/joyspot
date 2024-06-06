@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import {
 	Dialog,
 	DialogTrigger,
