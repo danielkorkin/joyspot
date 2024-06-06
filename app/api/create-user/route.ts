@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { Webhook } from "svix";
+import { WebhookEvent } from "../../../lib/types";
 
 const webhookSecret = process.env.WEBHOOK_SECRET as string;
 
@@ -14,10 +15,10 @@ export async function POST(request: NextRequest) {
 	const payload = await request.text();
 
 	const webhook = new Webhook(webhookSecret);
-	let event;
+	let event: WebhookEvent;
 
 	try {
-		event = webhook.verify(payload, svixHeaders);
+		event = webhook.verify(payload, svixHeaders) as WebhookEvent;
 	} catch (error) {
 		return NextResponse.json(
 			{ message: "Invalid request" },
