@@ -1,3 +1,5 @@
+[![Crowdin](https://badges.crowdin.net/joyspot/localized.svg)](https://crowdin.com/project/joyspot)
+
 # Joyspot
 #### Social Media without the Toxicity
 
