@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { verifySignature } from "@svix/webhooks";
-import { Webhook } from "@svix/webhooks";
+import { Svix } from "svix";
 
 // Verify signature using your Svix secret
 const svixWebhookSecret = process.env.SVIX_WEBHOOK_SECRET as string;
 
-const webhook = new Webhook(svixWebhookSecret);
+const webhook = new Svix(svixWebhookSecret);
 
 export async function POST(request: NextRequest) {
 	const payload = await request.text();

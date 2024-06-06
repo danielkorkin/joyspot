@@ -1,3 +1,4 @@
+"use client";
 // app/posts/page.tsx
 import { useEffect, useState } from "react";
 import CreatePostDialog from "@/components/CreatePostDialog";
