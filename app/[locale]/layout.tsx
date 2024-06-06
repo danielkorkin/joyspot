@@ -8,7 +8,7 @@ import {
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export default async function LocaleLayout({
 	children,
@@ -23,7 +23,12 @@ export default async function LocaleLayout({
 		<ClerkProvider>
 			<html suppressHydrationWarning lang={locale}>
 				<body>
-					<ThemeProvider>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="light"
+						enableSystem
+						disableTransitionOnChange
+					>
 						<NextIntlClientProvider messages={messages}>
 							<SignedOut>
 								<SignInButton />

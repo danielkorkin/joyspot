@@ -1,5 +1,19 @@
 {
-	"Index": {
-		"title": "¡Hola Mundo!"
+	"Home": {
+		"title": "Joyspot",
+		"slogan": "Social Media - Without the Toxicity",
+		"reasonStart": "Joyspot is less ",
+		"reasonEnd": " than other social media platforms.",
+		"reasonOne": "toxic",
+		"reasonTwo": "unhealthy",
+		"reasonThree": "addictive",
+		"reasonFour": "secretive",
+		"opensourceQuestion": "Is Joyspot open source?",
+		"opensourceAnswer": "Yes. It is open source and available on ",
+		"freeQuestion": "Is Joyspot free?",
+		"freeAnswer": "Yes. It is and will forever be free to use."
+	},
+	"Navbar": {
+		"products": "Products"
 	}
 }
