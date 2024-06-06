@@ -27,5 +27,10 @@
 	},
 	"PostCard": {
 		"author": "Author"
+	},
+	"CreatePostDialog": {
+		"title": "Create a New Post",
+		"newPost": "New Post",
+		"cancel": "Cancel"
 	}
 }
