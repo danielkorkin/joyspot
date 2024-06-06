@@ -9,7 +9,7 @@ export default function PostForm({
 }: {
 	onSubmit: (title: string, content: string) => void;
 }) {
-	t = useTranslations("PostForm");
+	const t = useTranslations("PostForm");
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
