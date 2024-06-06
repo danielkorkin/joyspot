@@ -13,7 +13,7 @@ const intlMiddleware = createMiddleware({
 	defaultLocale: "en",
 });
 
-const isProtectedRoute = createRouteMatcher(["posts"]);
+const isProtectedRoute = createRouteMatcher(["/posts"]);
 
 export default clerkMiddleware((auth, req) => {
 	if (isProtectedRoute(req)) auth().protect();
