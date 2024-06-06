@@ -22,7 +22,7 @@ const Navbar = async (props: Props) => {
 					<li>
 						<Link
 							className={buttonVariants({ variant: "outline" })}
-							href="/"
+							href="/posts"
 						>
 							{t("home")}
 						</Link>
