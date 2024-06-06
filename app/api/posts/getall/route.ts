@@ -10,6 +10,7 @@ export async function GET() {
 		});
 		return NextResponse.json(posts);
 	} catch (error) {
+		console.error(error);
 		return NextResponse.json(
 			{ error: "Error fetching posts" },
 			{ status: 500 }
