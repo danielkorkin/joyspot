@@ -9,7 +9,7 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuCheckboxItem,
 } from "@/src/components/ui/dropdown-menu";
-import { type Locale } from "@/lib/locales";
+import { type Locale } from "../lib/locales";
 import { GlobeIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
