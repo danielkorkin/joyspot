@@ -27,18 +27,17 @@ export default function CreatePostDialog({
 			return;
 		}
 
-		const response = await fetch("/api/posts/create", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ title, content, userId: user.id }),
-		});
-
-		if (response.ok) {
+		try {
+			const post = await db.post.create({
+				data: {
+					title,
+					content,
+					authorId: user.id,
+				},
+			});
 			onPostCreated();
 			setOpen(false);
-		} else {
+		} catch (error) {
 			console.error("Failed to create post");
 		}
 	};
