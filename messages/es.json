@@ -12,7 +12,6 @@
 		"opensourceAnswer": "Sí. Es de código abierto y disponible en ",
 		"freeQuestion": "¿Joyspot es gratis?",
 		"freeAnswer": "Sí. Es y será siempre libre de usar.",
-<<<<<<< l10n_beta
 		"joinNow": "Únete ahora"
 	},
 	"Navbar": {
@@ -33,7 +32,6 @@
 		"title": "Crear un nuevo post",
 		"newPost": "Nuevo post",
 		"cancel": "Cancelar"
-=======
 		"joinNow": "Join Now"
 	},
 	"Navbar": {
@@ -54,6 +52,5 @@
 		"title": "Create a New Post",
 		"newPost": "New Post",
 		"cancel": "Cancel"
->>>>>>> beta
 	}
 }
