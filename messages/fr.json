@@ -1,19 +1,19 @@
 {
 	"Home": {
 		"title": "Joyspot",
-		"slogan": "Social Media - Without the Toxicity",
-		"reasonStart": "Joyspot is less ",
-		"reasonEnd": " than other social media platforms.",
-		"reasonOne": "toxic",
-		"reasonTwo": "unhealthy",
-		"reasonThree": "addictive",
-		"reasonFour": "secretive",
-		"opensourceQuestion": "Is Joyspot open source?",
-		"opensourceAnswer": "Yes. It is open source and available on ",
-		"freeQuestion": "Is Joyspot free?",
-		"freeAnswer": "Yes. It is and will forever be free to use."
+		"slogan": "Réseaux sociaux - Sans Toxicité",
+		"reasonStart": "Joyspot est moins ",
+		"reasonEnd": " que les autres plateformes de médias sociaux.",
+		"reasonOne": "toxique",
+		"reasonTwo": "malsain",
+		"reasonThree": "addictif",
+		"reasonFour": "secret",
+		"opensourceQuestion": "Joyspot est-il open source ?",
+		"opensourceAnswer": "Oui. Il est open-source et disponible sur ",
+		"freeQuestion": "Joyspot est-il gratuit ?",
+		"freeAnswer": "Oui. Son utilisation est et sera toujours gratuite."
 	},
 	"Navbar": {
-		"products": "Products"
+		"products": "Produits"
 	}
 }
