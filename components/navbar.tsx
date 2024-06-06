@@ -29,9 +29,17 @@ const Navbar = async (props: Props) => {
 					</li>
 				</ul>
 			</nav>
-			<ModeToggle />
-			<LanguagePicker />
-			{user ? <UserButton afterSignOutUrl="/" /> : null}
+			<div className="flex items-center gap-4">
+				<ModeToggle />
+				{user ? (
+					<>
+						<LanguagePicker />
+						<UserButton afterSignOutUrl="/" />
+					</>
+				) : (
+					<LanguagePicker />
+				)}
+			</div>
 		</header>
 	);
 };
