@@ -1,11 +1,19 @@
 "use client";
-// app/posts/page.tsx
+
 import { useEffect, useState } from "react";
 import CreatePostDialog from "@/components/CreatePostDialog";
-import { Button } from "@/components/ui/button";
+
+type Post = {
+	id: string;
+	title: string;
+	content: string;
+	author: {
+		name: string;
+	};
+};
 
 export default function PostsPage() {
-	const [posts, setPosts] = useState([]);
+	const [posts, setPosts] = useState<Post[]>([]);
 
 	const fetchPosts = async () => {
 		const response = await fetch("/api/posts/getall");
