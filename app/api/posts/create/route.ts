@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
-	const { title, content } = await request.json();
-	const userId = "some-user-id"; // Replace with actual user ID logic
+	const { title, content, userId } = await request.json();
 
 	try {
 		const post = await db.post.create({

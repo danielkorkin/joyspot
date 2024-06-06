@@ -1,5 +1,5 @@
-// components/CreatePostDialog.tsx
 import { useState } from "react";
+import { currentUser } from "@clerk/nextjs";
 import {
 	Dialog,
 	DialogTrigger,
@@ -21,12 +21,18 @@ export default function CreatePostDialog({
 	const [open, setOpen] = useState(false);
 
 	const handleSubmit = async (title: string, content: string) => {
+		const user = await currentUser();
+		if (!user) {
+			console.error("User not authenticated");
+			return;
+		}
+
 		const response = await fetch("/api/posts/create", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
 			},
-			body: JSON.stringify({ title, content }),
+			body: JSON.stringify({ title, content, userId: user.id }),
 		});
 
 		if (response.ok) {
