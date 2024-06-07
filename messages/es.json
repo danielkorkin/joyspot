@@ -24,8 +24,8 @@
 		"placeholderTitle": "Título",
 		"placeholderContent": "Contenido",
 		"submit": "Crear publicación",
-		"errorTitle": "Title is required",
-		"toastTitle": "Post Created!"
+		"errorTitle": "Título requerido",
+		"toastTitle": "¡Mensaje creado!"
 	},
 	"PostCard": {
 		"author": "Autor"
