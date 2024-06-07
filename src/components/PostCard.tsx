@@ -24,7 +24,7 @@ export default function PostCard({ post }: PostCardProps) {
 	const t = useTranslations("PostCard");
 
 	return (
-		<Card className="mx-20 my-20">
+		<Card className="mx-20 my-8">
 			<CardHeader>
 				<CardTitle>{post.title}</CardTitle>
 				<CardDescription>{t("author")}: {post.author.name}</CardDescription>

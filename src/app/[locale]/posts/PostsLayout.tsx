@@ -3,6 +3,7 @@ import PostCard from "@/src/components/PostCard";
 import Navbar from "@/src/components/navbar";
 import { Post } from "@/src/lib/types";
 import { useTranslations } from "next-intl";
+import { Toaster } from "@/components/ui/sonner"
 
 interface PostsLayoutProps {
 	posts: Post[];
@@ -20,11 +21,12 @@ export const PostsLayout = ({ posts }: PostsLayoutProps) => {
 				</h1>
 				<CreatePostDialog />
 			</div>
-			<div className="mt-4">
+			<div className="mt-2">
 				{posts.map((post) => (
 					<PostCard key={post.id} post={post} />
 				))}
 			</div>
+			<Toaster />
 		</div>
 	);
 };
