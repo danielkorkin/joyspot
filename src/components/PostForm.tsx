@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 export default function PostForm({
 	onSubmit,
@@ -18,6 +19,7 @@ export default function PostForm({
 		onSubmit(title, content);
 		setTitle("");
 		setContent("");
+		toast(t("toastTitle"));
 	};
 
 	return (
