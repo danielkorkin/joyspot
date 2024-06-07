@@ -20,6 +20,14 @@ bun install
 ```
 
 ### Fill out the `.env` file
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+DATABASE_URL=
+DIRECT_URL=
+WEBHOOK_SECRET=
+```
+
 
 ### Run the development server
 
