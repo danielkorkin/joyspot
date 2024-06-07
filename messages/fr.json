@@ -31,7 +31,6 @@
 	"CreatePostDialog": {
 		"title": "Créer un nouveau message",
 		"newPost": "Nouveau message",
-		"cancel": "Annuler",
-		"joinNow": "Adhérer maintenant"
+		"cancel": "Annuler"
 	}
 }
