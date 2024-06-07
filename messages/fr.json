@@ -23,7 +23,9 @@
 	"PostForm": {
 		"placeholderTitle": "Titre",
 		"placeholderContent": "Contenu",
-		"submit": "Créer un message"
+		"submit": "Créer un message",
+		"errorTitle": "Le titre est requis",
+		"toastTitle": "Post créé!"
 	},
 	"PostCard": {
 		"author": "Auteur"

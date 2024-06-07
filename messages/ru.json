@@ -23,7 +23,9 @@
 	"PostForm": {
 		"placeholderTitle": "Заголовок",
 		"placeholderContent": "Содержание",
-		"submit": "Создать сообщение"
+		"submit": "Создать сообщение",
+		"errorTitle": "Требуется название",
+		"toastTitle": "Пост создан!"
 	},
 	"PostCard": {
 		"author": "Автор"
