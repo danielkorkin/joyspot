@@ -1,5 +1,6 @@
 import CreatePostDialog from "@/src/components/CreatePostDialog";
 import PostCard from "@/src/components/PostCard";
+import Navbar from "@/src/components/navbar";
 import { Post } from "@/src/lib/types";
 import { useTranslations } from "next-intl";
 
@@ -12,8 +13,13 @@ export const PostsLayout = ({ posts }: PostsLayoutProps) => {
 
 	return (
 		<div>
-			<h1>{t("title")}</h1>
-			<CreatePostDialog />
+			<Navbar />
+			<div className="flex flex-col items-center justify-center">
+				<h1 className="text-5xl font-bold pt-24 text-center pb-2">
+					{t("title")}
+				</h1>
+				<CreatePostDialog />
+			</div>
 			<div className="mt-4">
 				{posts.map((post) => (
 					<PostCard key={post.id} post={post} />
