@@ -1,8 +1,8 @@
 // src/lib/perspective.ts
-import { Perspective } from "perspective-api-client";
+import Perspective from "perspective-api-client";
 
 const perspective = new Perspective({
-	apiKey: process.env.PERSPECTIVE_API_KEY,
+	apiKey: process.env.PERSPECTIVE_API_KEY!,
 });
 
 export async function analyzeToxicity(text: string): Promise<number> {

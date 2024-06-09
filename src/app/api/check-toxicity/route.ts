@@ -1,10 +1,6 @@
 // src/app/api/check-toxicity/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import Perspective from "perspective-api-client";
-
-const perspective = new Perspective({
-	apiKey: process.env.PERSPECTIVE_API_KEY,
-});
+import { analyzeToxicity } from "@/src/lib/perspective";
 
 export async function POST(request: NextRequest) {
 	const { content } = await request.json();
@@ -17,9 +13,7 @@ export async function POST(request: NextRequest) {
 	}
 
 	try {
-		const result = await perspective.analyze(content);
-		const toxicityScore =
-			result.attributeScores.TOXICITY.summaryScore.value;
+		const toxicityScore = await analyzeToxicity(content);
 
 		console.log("Toxicity Score:", toxicityScore); // Log the toxicity score for debugging
 
