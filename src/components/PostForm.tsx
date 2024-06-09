@@ -1,4 +1,3 @@
-// src/components/PostForm.tsx
 import { useState } from "react";
 import { Input } from "@/src/components/ui/input";
 import { Button } from "@/src/components/ui/button";
@@ -39,7 +38,7 @@ export default function PostForm({
 			} else {
 				toast(response.data.error || t("toastError"));
 			}
-		} catch (error) {
+		} catch (error: any) {
 			if (
 				error.response &&
 				error.response.status === 400 &&
