@@ -1,10 +1,9 @@
-// src/components/PostForm.tsx
 import { useState } from "react";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Input } from "@/src/components/ui/input";
+import { Button } from "@/src/components/ui/button";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
-import { Toaster } from "./ui/sonner";
+import { Toaster } from "@/components/ui/sonner";
 import axios from "axios";
 
 export default function PostForm({
@@ -16,15 +15,6 @@ export default function PostForm({
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const [loading, setLoading] = useState(false);
-
-	interface AxiosError {
-		response?: {
-			status: number;
-			data: {
-				error: string;
-			};
-		};
-	}
 
 	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
@@ -48,12 +38,11 @@ export default function PostForm({
 			} else {
 				toast(response.data.error || t("toastError"));
 			}
-		} catch (error: unknown) {
-			const axiosError = error as AxiosError;
+		} catch (error: any) {
 			if (
-				axiosError.response &&
-				axiosError.response.status === 400 &&
-				axiosError.response.data.error === "Post is too toxic"
+				error.response &&
+				error.response.status === 400 &&
+				error.response.data.error === "Post is too toxic"
 			) {
 				toast(t("toastTooToxic"));
 			} else {

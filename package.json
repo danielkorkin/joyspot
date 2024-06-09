@@ -21,7 +21,7 @@
 		"next": "14.2.3",
 		"next-intl": "^3.14.1",
 		"next-themes": "^0.3.0",
-		"perspective-api-client": "git+https://github.com/devium335/perspective-api-client.git",
+		"perspective-api-client": "^3.1.0",
 		"react": "^18",
 		"react-dom": "^18",
 		"sonner": "^1.4.41",
