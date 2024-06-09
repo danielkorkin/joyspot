@@ -35,9 +35,9 @@ export default function PostForm({
 				response.status === 400 &&
 				response.data.error === "Post is too toxic"
 			) {
-				toast("Post is too toxic");
+				toast(t("toastTooToxic"));
 			} else {
-				toast(response.data.error || "Failed to analyze content");
+				toast(response.data.error || t("toastError"));
 			}
 		} catch (error) {
 			if (
@@ -45,10 +45,10 @@ export default function PostForm({
 				error.response.status === 400 &&
 				error.response.data.error === "Post is too toxic"
 			) {
-				toast("Post is too toxic");
+				toast(t("toastTooToxic"));
 			} else {
 				console.error("Error submitting post:", error); // Log any errors for debugging
-				toast("Failed to analyze content");
+				toast(t("toastError"));
 			}
 		} finally {
 			setLoading(false);

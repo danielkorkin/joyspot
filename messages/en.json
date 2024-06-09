@@ -25,7 +25,9 @@
 		"placeholderContent": "Content",
 		"submit": "Create Post",
 		"errorTitle": "Title is required",
-		"toastTitle": "Post Created!"
+		"toastTitle": "Post Created!",
+		"toastTooToxic": "Post is too Toxic!",
+		"toastError": "Error analyzing post"
 	},
 	"PostCard": {
 		"author": "Author"
