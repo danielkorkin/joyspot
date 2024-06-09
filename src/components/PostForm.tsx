@@ -14,8 +14,39 @@ export default function PostForm({
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
-	const handleSubmit = (event: React.FormEvent) => {
+	const handleToxicityCheck = async (content: string) => {
+		try {
+			const response = await fetch("/api/check-toxicity", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ content }),
+			});
+
+			if (!response.ok) {
+				const errorData = await response.json();
+				throw new Error(errorData.message || "An error occurred");
+			}
+
+			const result = await response.json();
+			return result;
+		} catch (error) {
+			console.error("Error checking toxicity:", error);
+			return { success: false, message: error.message };
+		}
+	};
+
+	const handleSubmit = async (event: React.FormEvent) => {
 		event.preventDefault();
+
+		const result = await handleToxicityCheck(content);
+
+		if (!result.success) {
+			toast(result.message);
+			return;
+		}
+
 		onSubmit(title, content);
 		setTitle("");
 		setContent("");
