@@ -71,7 +71,7 @@ export default function PostForm({
 				required
 			/>
 			<Button type="submit" disabled={loading}>
-				{loading ? "Checking..." : t("submit")}
+				{loading ? t("loading_checking") : t("submit")}
 			</Button>
 		</form>
 	);

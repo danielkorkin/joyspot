@@ -27,7 +27,8 @@
 		"errorTitle": "Title is required",
 		"toastTitle": "Post Created!",
 		"toastTooToxic": "Post is too Toxic!",
-		"toastError": "Error analyzing post"
+		"toastError": "Error analyzing post",
+		"loading_checking": "Checking..."
 	},
 	"PostCard": {
 		"author": "Author"
