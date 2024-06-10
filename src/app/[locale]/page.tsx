@@ -12,6 +12,7 @@ import { cn } from "../../lib/utils";
 import AnimatedGradientText from "@/src/components/magicui/animated-gradient-text";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 export default function Home() {
 	const t = useTranslations("Home");
@@ -21,6 +22,7 @@ export default function Home() {
 		t("reasonThree"),
 		t("reasonFour"),
 	];
+	const locale = cookies().get("NEXT_LOCALE")?.value || "en";
 
 	return (
 		<main>
@@ -36,7 +38,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className="z-10 flex min-h-[4rem] items-center justify-center">
-				<Link href="/posts">
+				<Link href={`/${locale}/posts`}>
 					<AnimatedGradientText>
 						🎉{" "}
 						<hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}

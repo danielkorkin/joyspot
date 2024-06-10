@@ -8,12 +8,14 @@ import { buttonVariants } from "@/src/components/ui/button";
 import { LanguagePicker } from "@/src/components/language-switcher";
 import { UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
+import { cookies } from "next/headers";
 
 type Props = {};
 
 const Navbar = async (props: Props) => {
 	const t = useTranslations("Navbar");
 	const user = await currentUser();
+	const locale = cookies().get("NEXT_LOCALE")?.value || "en";
 
 	return (
 		<header className="fixed right-0 left-0 top-0 py-4 px-4 backdrop-blur-lg z-[100] flex items-center border-b-[1px] border-neutral-900 justify-between">
@@ -22,7 +24,7 @@ const Navbar = async (props: Props) => {
 					<li>
 						<Link
 							className={buttonVariants({ variant: "outline" })}
-							href="/posts"
+							href={`/${locale}/posts`}
 						>
 							{t("home")}
 						</Link>
