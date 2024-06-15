@@ -28,7 +28,8 @@ const CreatePostDialog = () => {
 			</DialogTrigger>
 			<DialogContent>
 				<DialogHeader>
-					<DialogTitle>Create a New Post</DialogTitle>
+					<DialogTitle>Create a New P
+						ost</DialogTitle>
 				</DialogHeader>
 				<PostForm
 					onSubmit={(title, content) => {
