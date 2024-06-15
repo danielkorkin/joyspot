@@ -4,6 +4,7 @@ import Navbar from "@/src/components/navbar";
 import { Post } from "@/src/lib/types";
 import { useTranslations } from "next-intl";
 import { Toaster } from "@/components/ui/sonner"
+import MotivationCard from "@/src/components/MotivationCard";
 
 interface PostsLayoutProps {
 	posts: Post[];
@@ -20,6 +21,7 @@ export const PostsLayout = ({ posts }: PostsLayoutProps) => {
 					{t("title")}
 				</h1>
 				<CreatePostDialog />
+				<MotivationCard />
 			</div>
 			<div className="mt-2">
 				{posts.map((post) => (
