@@ -5,7 +5,19 @@ import {
 	CardDescription,
 	CardContent,
 } from "@/src/components/ui/card";
-import quotes from "../public/quotes.json";
+import quotesData from "../public/quotes.json";
+
+// Define the type for the quotes data
+interface Quote {
+	quote: string;
+	author: string;
+}
+
+interface Quotes {
+	[key: string]: Quote;
+}
+
+const quotes: Quotes = quotesData;
 
 const MotivationCard = () => {
 	let date = new Date()
